@@ -22,10 +22,12 @@ import ProfileSettingsPage from './pages/ProfileSettingsPage.jsx';
 import NotFoundPage from './pages/NotFoundPage.jsx';
 
 export const App = () => {
+  const basename = import.meta.env.BASE_URL || '/';
+
   return (
     <NotificationProvider>
       <AuthProvider>
-        <BrowserRouter>
+        <BrowserRouter basename={basename}>
           <Routes>
             <Route path="/" element={<MainLayout />}>
               {/* Public Pages */}

@@ -28,18 +28,29 @@ export const LandingPage = () => {
   ];
 
   return (
-    <div className="space-y-24 py-8">
+    <div className="space-y-24 py-8 relative">
+      {/* Dynamic Animated Ambient Background Elements */}
+      <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[600px] sm:w-[850px] h-[360px] bg-gradient-to-tr from-brand-200/50 via-emerald-100/40 to-teal-200/40 rounded-full blur-3xl -z-10 pointer-events-none animate-pulse-glow" />
+      <div className="absolute top-48 right-10 w-64 h-64 bg-teal-200/30 rounded-full blur-2xl -z-10 pointer-events-none animate-float-slow" />
+      <div className="absolute top-72 left-8 w-56 h-56 bg-brand-200/30 rounded-full blur-2xl -z-10 pointer-events-none animate-float-delayed" />
+
       {/* Hero Section */}
       <section className="relative overflow-hidden pt-6 pb-12">
         <div className="max-w-4xl mx-auto text-center space-y-6">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-50 border border-brand-200 text-brand-800 text-xs font-semibold shadow-xs">
-            <Sparkles className="w-4 h-4 text-brand-600" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-50/90 border border-brand-200 text-brand-800 text-xs font-semibold shadow-xs backdrop-blur-xs animate-float">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-600"></span>
+            </span>
+            <Sparkles className="w-3.5 h-3.5 text-brand-600" />
             <span>Next-Generation Municipal Waste & Recycling Platform</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
             Cleaner Neighborhoods, <br />
-            <span className="text-brand-700 bg-clip-text">Rewarded Recycling</span>
+            <span className="bg-gradient-to-r from-brand-700 via-emerald-600 to-teal-700 bg-clip-text text-transparent">
+              Rewarded Recycling
+            </span>
           </h1>
 
           <p className="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
@@ -50,14 +61,14 @@ export const LandingPage = () => {
           <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
             <Link
               to={isAuthenticated ? '/reports/new' : '/register'}
-              className="px-6 py-3.5 bg-brand-700 hover:bg-brand-800 text-white rounded-xl font-bold shadow-md hover:shadow-lg transition-all flex items-center gap-2 group"
+              className="px-6 py-3.5 bg-brand-700 hover:bg-brand-800 text-white rounded-xl font-bold shadow-md hover:shadow-xl hover:-translate-y-0.5 transition-all flex items-center gap-2 group"
             >
               <span>{isAuthenticated ? 'Report Waste Now' : 'Get Started Free'}</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Link>
             <Link
               to="/rewards"
-              className="px-6 py-3.5 bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 rounded-xl font-semibold shadow-xs transition-colors flex items-center gap-2"
+              className="px-6 py-3.5 bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 rounded-xl font-semibold shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all flex items-center gap-2"
             >
               <Award className="w-4 h-4 text-brand-600" />
               <span>Explore Rewards & Leaderboard</span>
@@ -66,7 +77,7 @@ export const LandingPage = () => {
 
           {/* Quick Demo Credentials Preview Pill */}
           <div className="pt-4">
-            <div className="inline-flex items-center gap-3 p-2 px-4 rounded-xl bg-slate-100 text-xs text-slate-600 border border-slate-200">
+            <div className="inline-flex items-center gap-3 p-2 px-4 rounded-xl bg-white/90 backdrop-blur-xs text-xs text-slate-600 border border-slate-200/90 shadow-xs">
               <span className="font-bold text-slate-800">Evaluator Note:</span>
               <span>1-click demo logins available on the login page for instant assessment!</span>
               <Link to="/login" className="text-brand-700 font-bold underline hover:text-brand-800">Go to Login</Link>
@@ -76,19 +87,19 @@ export const LandingPage = () => {
 
         {/* Live Key Metrics */}
         <div className="max-w-5xl mx-auto mt-14 grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div className="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-xs text-center space-y-1">
+          <div className="bg-white/90 backdrop-blur-xs rounded-2xl p-5 border border-slate-200/80 shadow-xs card-hover text-center space-y-1">
             <p className="text-3xl font-extrabold text-brand-700 font-heading">98.4%</p>
             <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Resolution Rate</p>
           </div>
-          <div className="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-xs text-center space-y-1">
+          <div className="bg-white/90 backdrop-blur-xs rounded-2xl p-5 border border-slate-200/80 shadow-xs card-hover text-center space-y-1">
             <p className="text-3xl font-extrabold text-brand-700 font-heading">24 hrs</p>
             <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Avg Response Time</p>
           </div>
-          <div className="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-xs text-center space-y-1">
+          <div className="bg-white/90 backdrop-blur-xs rounded-2xl p-5 border border-slate-200/80 shadow-xs card-hover text-center space-y-1">
             <p className="text-3xl font-extrabold text-brand-700 font-heading">5,200+</p>
             <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Recycling Points</p>
           </div>
-          <div className="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-xs text-center space-y-1">
+          <div className="bg-white/90 backdrop-blur-xs rounded-2xl p-5 border border-slate-200/80 shadow-xs card-hover text-center space-y-1">
             <p className="text-3xl font-extrabold text-brand-700 font-heading">100%</p>
             <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Audit Accountability</p>
           </div>
@@ -105,7 +116,7 @@ export const LandingPage = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs hover:shadow-md transition-shadow space-y-4">
+          <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs card-hover space-y-4">
             <div className="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center border border-emerald-200">
               <MapPin className="w-6 h-6" />
             </div>
@@ -115,7 +126,7 @@ export const LandingPage = () => {
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs hover:shadow-md transition-shadow space-y-4">
+          <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs card-hover space-y-4">
             <div className="w-12 h-12 rounded-xl bg-sky-50 text-sky-700 flex items-center justify-center border border-sky-200">
               <Truck className="w-6 h-6" />
             </div>
@@ -125,7 +136,7 @@ export const LandingPage = () => {
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs hover:shadow-md transition-shadow space-y-4">
+          <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs card-hover space-y-4">
             <div className="w-12 h-12 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center border border-amber-200">
               <Award className="w-6 h-6" />
             </div>

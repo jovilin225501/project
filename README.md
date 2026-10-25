@@ -1,11 +1,18 @@
 # EcoTrack — Smart Waste Management and Recycling Platform
 
-[![MERN Stack](https://img.shields.io/badge/Stack-MERN-047857?style=for-the-badge&logo=mongodb)](https://github.com)
+[![MERN Stack](https://img.shields.io/badge/Stack-MERN-047857?style=for-the-badge&logo=mongodb)](https://github.com/jovilin225501/project)
+[![Live Frontend Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-2563eb?style=for-the-badge&logo=github)](https://jovilin225501.github.io/project/)
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/jovilin225501/project)
 [![License: MIT](https://img.shields.io/badge/License-MIT-059669.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
-[![Tests Passing](https://img.shields.io/badge/Tests-19%20Passing-10b981?style=for-the-badge)](https://github.com)
-[![Node.js](https://img.shields.io/badge/Node.js-v24.x-064e3b?style=for-the-badge&logo=node.js)](https://nodejs.org)
+[![Tests Passing](https://img.shields.io/badge/Tests-19%20Passing-10b981?style=for-the-badge)](https://github.com/jovilin225501/project)
 
 > A modern, production-minded MERN stack platform that connects civic residents with municipal waste collection operations, introduces on-demand recyclable pickups, and rewards sustainable actions through a transparent community points ledger.
+
+### 🌐 Live Hosted Links
+- **Frontend Live App (GitHub Pages)**: [https://jovilin225501.github.io/project/](https://jovilin225501.github.io/project/)
+- **Frontend Live App (Render)**: [https://ecotrack-client.onrender.com](https://ecotrack-client.onrender.com)
+- **Backend REST API (Render)**: [https://ecotrack-api.onrender.com/api](https://ecotrack-api.onrender.com/api)
+- **API Health Endpoint**: [https://ecotrack-api.onrender.com/api/health](https://ecotrack-api.onrender.com/api/health)
 
 ---
 

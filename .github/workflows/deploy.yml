@@ -33,9 +33,12 @@ jobs:
           cache-dependency-path: client/package-lock.json
 
       - name: Install Client Dependencies
-        run: npm --prefix client ci
+        run: npm --prefix client install
 
-      - name: Build Vite React Client
+      - name: Build Vite React Client for GitHub Pages
+        env:
+          GITHUB_PAGES: 'true'
+          VITE_API_URL: 'https://ecotrack-api.onrender.com/api'
         run: |
           npm --prefix client run build
           cp client/dist/index.html client/dist/404.html
