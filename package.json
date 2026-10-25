@@ -1,0 +1,33 @@
+{
+  "name": "ecotrack",
+  "version": "1.0.0",
+  "description": "EcoTrack — Smart Waste Management and Recycling Platform (MERN Stack)",
+  "main": "server/src/server.js",
+  "scripts": {
+    "install:all": "npm --prefix server install && npm --prefix client install",
+    "dev": "concurrently -n \"SERVER,CLIENT\" -c \"blue,green\" \"npm --prefix server run dev\" \"npm --prefix client run dev\"",
+    "dev:server": "npm --prefix server run dev",
+    "dev:client": "npm --prefix client run dev",
+    "build": "npm --prefix client run build",
+    "test": "npm --prefix server run test",
+    "test:server": "npm --prefix server run test",
+    "test:client": "npm --prefix client run test",
+    "seed": "npm --prefix server run seed",
+    "create-admin": "npm --prefix server run create-admin"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "keywords": [
+    "mern",
+    "waste-management",
+    "recycling",
+    "react",
+    "nodejs",
+    "express",
+    "mongodb",
+    "sustainability"
+  ],
+  "author": "EcoTrack Team",
+  "license": "MIT"
+}
