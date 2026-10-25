@@ -40,11 +40,9 @@ services:
   # ------------------------------------------------------------------
   # 2. EcoTrack Frontend Web App (React + Vite Static Site)
   # ------------------------------------------------------------------
-  - type: web
-    name: ecotrack-client
-    runtime: static
-    plan: free
-    rootDir: client
+  - - type: static
+  name: ecotrack-client
+  rootDir: client
     buildCommand: npm install && npm run build
     staticPublishPath: dist
     autoDeploy: true
