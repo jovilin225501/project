@@ -21,19 +21,19 @@ services:
       - key: PORT
         value: 10000
       - key: MONGODB_URI
-        sync: false # Set your MongoDB Atlas connection string in Render Dashboard
+        sync: false
       - key: JWT_SECRET
-        generateValue: true # Render will generate a cryptographically secure 256-bit secret
+        generateValue: true
       - key: JWT_EXPIRES_IN
         value: 7d
       - key: CLIENT_URL
-        sync: false # Point to your frontend URL (e.g. https://ecotrack-client.onrender.com)
+        sync: false
       - key: ADMIN_NAME
-        value: EcoTrack Administrator
+        value: "EcoTrack Administrator"
       - key: ADMIN_EMAIL
         value: admin@ecotrack.org
       - key: ADMIN_PASSWORD
-        sync: false # Admin password for seeding/initial setup
+        sync: false
 
   # ------------------------------------------------------------------
   # 2. EcoTrack Frontend Web App (React + Vite Static Site)
