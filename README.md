@@ -417,21 +417,35 @@ For cloud deployments (AWS S3, Cloudinary), the Multer disk engine can be swappe
 
 ## 14. Deployment Guide
 
-### Frontend Deployment (Vercel / Netlify / Render Static)
-1. Set build command: `npm run build`
-2. Set output directory: `dist`
-3. Add environment variable: `VITE_API_URL=https://your-backend-domain.com/api`
-4. Add SPA fallback rewrites (e.g. `/*` to `/index.html`) so refreshing nested routes does not trigger 404s.
+EcoTrack is production-ready for deployment on **[Render](https://render.com)**. A full step-by-step walkthrough is available in [docs/RENDER_DEPLOYMENT.md](file:///c:/Users/jovil/OneDrive/Desktop/project/docs/RENDER_DEPLOYMENT.md).
 
-### Backend Deployment (Render / Railway / Fly.io / AWS EC2)
+### Quick 1-Click Blueprint Deployment (Render)
+1. Push this repository to GitHub or GitLab.
+2. Go to the [Render Dashboard](https://dashboard.render.com) and click **New +** $\rightarrow$ **Blueprint**.
+3. Select this repository. Render detects [`render.yaml`](file:///c:/Users/jovil/OneDrive/Desktop/project/render.yaml) and automatically provisions:
+   - **`ecotrack-api`**: Node.js Express REST API Web Service
+   - **`ecotrack-client`**: React + Vite CDN Static Site with SPA client-side rewrites
+4. Provide your `MONGODB_URI` when prompted and click **Apply**.
+
+### Manual Service Deployment
+
+#### Frontend Static Site (Render / Vercel / Netlify)
+1. Root directory: `client`
+2. Build command: `npm install && npm run build`
+3. Publish / Output directory: `dist`
+4. Environment variable: `VITE_API_URL=https://ecotrack-api.onrender.com/api`
+5. SPA fallback rewrite: Add rule from `/*` to `/index.html` to prevent 404s on browser reload.
+
+#### Backend Web Service (Render / Railway / Fly.io / AWS EC2)
 1. Root directory: `server`
 2. Build command: `npm install`
 3. Start command: `node src/server.js`
-4. Environment variables to configure on the hosting dashboard:
-   - `PORT=5000` (or host assigned `$PORT`)
+4. Health check path: `/api/health`
+5. Environment variables to configure on hosting dashboard:
+   - `PORT=10000` (or host-assigned `$PORT`)
    - `MONGODB_URI=mongodb+srv://...` (your Atlas production URI)
    - `JWT_SECRET=your_secure_random_key_min_32_chars`
-   - `CLIENT_URL=https://your-frontend-domain.com`
+   - `CLIENT_URL=https://ecotrack-client.onrender.com`
    - `NODE_ENV=production`
 
 ---
