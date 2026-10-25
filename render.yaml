@@ -11,7 +11,6 @@ services:
     name: ecotrack-api
     runtime: node
     plan: free
-    region: oregon
     rootDir: server
     buildCommand: npm install
     startCommand: node src/server.js
