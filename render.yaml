@@ -11,6 +11,7 @@ services:
     name: ecotrack-api
     runtime: node
     plan: free
+    region: oregon
     rootDir: server
     buildCommand: npm install
     startCommand: node src/server.js
@@ -43,7 +44,6 @@ services:
     name: ecotrack-client
     runtime: static
     plan: free
-    region: oregon
     rootDir: client
     buildCommand: npm install && npm run build
     staticPublishPath: dist
