@@ -4,9 +4,7 @@
 # ====================================================================
 
 services:
-  # ------------------------------------------------------------------
-  # 1. EcoTrack Backend REST API (Node.js Express Web Service)
-  # ------------------------------------------------------------------
+  # 1. EcoTrack Backend REST API
   - type: web
     name: ecotrack-api
     runtime: node
